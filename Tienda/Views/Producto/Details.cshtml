@@ -1,0 +1,28 @@
+﻿@model Tienda.Models.Producto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<section class="container">
+
+    <h2 class="text-center mb-4">Detalles de Producto</h2>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+        <div class="col">
+            <div class="card h-100">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h4 class="card-title">@Html.DisplayFor(model => model.nombreProducto)</h4>
+                    <h5 class="card-text">@Html.DisplayNameFor(model => model.unidadesDisponibles)</h5>
+                    <p class="font-weight-bold">@Html.DisplayFor(model => model.unidadesDisponibles)</p>
+                    <button type="button" class="btn btn-dark">@Html.ActionLink("Back to List", "Index")</button>
+                    <button type="button" class="btn btn-dark">@Html.ActionLink("Edit", "Edit", new { id = Model.productoID })</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>

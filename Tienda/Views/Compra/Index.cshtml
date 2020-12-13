@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Tienda.Models.Compra>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<table class="table table-dark mt-5">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.valorProductos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechadecompra)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.valorProductos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechadecompra)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.compraID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.compraID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.compraID })
+        </td>
+    </tr>
+}
+
+</table>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>

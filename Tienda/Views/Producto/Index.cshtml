@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Tienda.Models.Producto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<table class="table table-dark mt-5">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombreProducto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.unidadesDisponibles)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombreProducto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.unidadesDisponibles)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.productoID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.productoID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.productoID })
+        </td>
+    </tr>
+}
+
+</table>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
